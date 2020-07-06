@@ -91,7 +91,7 @@ public class ModelConstants {
      * Cassandra admin_settings constants.
      */
     public static final String ADMIN_SETTINGS_COLUMN_FAMILY_NAME = "admin_settings";
-    public static final String ADMIN_SETTINGS_KEY_PROPERTY = "key";
+    public static final String ADMIN_SETTINGS_KEY_PROPERTY = "[key]";
     public static final String ADMIN_SETTINGS_JSON_VALUE_PROPERTY = "json_value";
 
     public static final String ADMIN_SETTINGS_BY_KEY_COLUMN_FAMILY_NAME = "admin_settings_by_key";
@@ -363,7 +363,7 @@ public class ModelConstants {
     public static final String TS_KV_LATEST_CF = "ts_kv_latest_cf";
 
     public static final String PARTITION_COLUMN = "partition";
-    public static final String KEY_COLUMN = "key";
+    public static final String KEY_COLUMN = "[key]";
     public static final String KEY_ID_COLUMN = "key_id";
     public static final String TS_COLUMN = "ts";
 

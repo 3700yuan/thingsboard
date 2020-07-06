@@ -113,14 +113,20 @@ public class InstallScripts {
                             JsonNode ruleChainJson = objectMapper.readTree(path.toFile());
                             RuleChain ruleChain = objectMapper.treeToValue(ruleChainJson.get("ruleChain"), RuleChain.class);
                             RuleChainMetaData ruleChainMetaData = objectMapper.treeToValue(ruleChainJson.get("metadata"), RuleChainMetaData.class);
-
+                            log.info("--createDefaultRuleChains--0---");
                             ruleChain.setTenantId(tenantId);
                             ruleChain = ruleChainService.saveRuleChain(ruleChain);
-
+                            log.info("---createDefaultRuleChains--1--");
                             ruleChainMetaData.setRuleChainId(ruleChain.getId());
                             ruleChainService.saveRuleChainMetaData(new TenantId(EntityId.NULL_UUID), ruleChainMetaData);
                         } catch (Exception e) {
                             log.error("Unable to load rule chain from json: [{}]", path.toString());
+                            e.printStackTrace();
+                            log.error(e.getMessage());
+                            StackTraceElement[] sts = e.getStackTrace();
+                            for(StackTraceElement st:sts){
+                               log.error(st.toString());
+                            }
                             throw new RuntimeException("Unable to load rule chain from json", e);
                         }
                     }

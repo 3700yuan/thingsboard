@@ -50,6 +50,7 @@ public abstract class SqlAbstractDatabaseSchemaService implements DatabaseSchema
     protected SqlAbstractDatabaseSchemaService(String schemaSql, String schemaIdxSql) {
         this.schemaSql = schemaSql;
         this.schemaIdxSql = schemaIdxSql;
+        System.out.println("schemaSql = " + schemaSql);
     }
 
     @Override

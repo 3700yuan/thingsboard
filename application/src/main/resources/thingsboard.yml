@@ -18,7 +18,7 @@ server:
   # Server bind address
   address: "${HTTP_BIND_ADDRESS:0.0.0.0}"
   # Server bind port
-  port: "${HTTP_BIND_PORT:8080}"
+  port: "${HTTP_BIND_PORT:7081}"
   # Server SSL configuration
   ssl:
     # Enable/disable SSL support
@@ -401,7 +401,7 @@ redis:
 # Check new version updates parameters
 updates:
   # Enable/disable updates checking.
-  enabled: "${UPDATES_ENABLED:true}"
+  enabled: "${UPDATES_ENABLED:false}"
 
 # spring CORS configuration
 spring.mvc.cors:
@@ -438,12 +438,12 @@ spring:
     open-in-view: "false"
     hibernate:
       ddl-auto: "none"
-    database-platform: "${SPRING_JPA_DATABASE_PLATFORM:org.hibernate.dialect.PostgreSQLDialect}"
+    database-platform: "${SPRING_JPA_DATABASE_PLATFORM:org.hibernate.dialect.MySQL57InnoDBDialect}"
   datasource:
-    driverClassName: "${SPRING_DRIVER_CLASS_NAME:org.postgresql.Driver}"
-    url: "${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/thingsboard}"
-    username: "${SPRING_DATASOURCE_USERNAME:postgres}"
-    password: "${SPRING_DATASOURCE_PASSWORD:postgres}"
+    driverClassName: "${SPRING_DRIVER_CLASS_NAME:com.mysql.cj.jdbc.Driver}"
+    url: "${SPRING_DATASOURCE_URL:jdbc:mysql://127.0.0.1:3306/thingsboard?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&allowMultiQueries=true}"
+    username: "${SPRING_DATASOURCE_USERNAME:root}"
+    password: "${SPRING_DATASOURCE_PASSWORD:123456}"
     hikari:
       maximumPoolSize: "${SPRING_DATASOURCE_MAXIMUM_POOL_SIZE:5}"
 
@@ -543,7 +543,7 @@ transport:
     # Enable/disable mqtt transport protocol.
     enabled: "${MQTT_ENABLED:true}"
     bind_address: "${MQTT_BIND_ADDRESS:0.0.0.0}"
-    bind_port: "${MQTT_BIND_PORT:1883}"
+    bind_port: "${MQTT_BIND_PORT:1881}"
     timeout: "${MQTT_TIMEOUT:10000}"
     netty:
       leak_detector_level: "${NETTY_LEAK_DETECTOR_LVL:DISABLED}"
