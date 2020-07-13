@@ -21,7 +21,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.thingsboard.server.dao.model.sqlts.latest.TsKvLatestEntity;
 import org.thingsboard.server.dao.sqlts.insert.AbstractInsertRepository;
 import org.thingsboard.server.dao.sqlts.insert.latest.InsertLatestTsRepository;
-import org.thingsboard.server.dao.util.HsqlDao;
 import org.thingsboard.server.dao.util.MysqlDao;
 import org.thingsboard.server.dao.util.SqlTsDao;
 

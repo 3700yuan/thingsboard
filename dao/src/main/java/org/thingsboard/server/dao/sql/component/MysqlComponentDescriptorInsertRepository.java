@@ -19,7 +19,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 import org.thingsboard.server.common.data.UUIDConverter;
 import org.thingsboard.server.dao.model.sql.ComponentDescriptorEntity;
-import org.thingsboard.server.dao.util.HsqlDao;
 import org.thingsboard.server.dao.util.MysqlDao;
 import org.thingsboard.server.dao.util.SqlDao;
 

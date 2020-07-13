@@ -19,7 +19,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.thingsboard.server.dao.model.sql.RelationCompositeKey;
 import org.thingsboard.server.dao.model.sql.RelationEntity;
-import org.thingsboard.server.dao.util.HsqlDao;
 import org.thingsboard.server.dao.util.MysqlDao;
 import org.thingsboard.server.dao.util.SqlDao;
 
